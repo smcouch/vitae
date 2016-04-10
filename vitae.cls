@@ -16,15 +16,26 @@
 \usepackage{etaremune}
 \LoadClass{report}
 \definecolor{grey95}{rgb}{0.949,0.949,0.949}
+\usepackage{geometry}
 
 % Set page lengths
-\setlength{\oddsidemargin}{0pt}
-\setlength{\topmargin}{0pt}
-\setlength{\textheight}{628pt}
-\setlength{\headheight}{14pt}
-\setlength{\textwidth}{456pt}
+%\setlength{\oddsidemargin}{0pt}
+%\setlength{\topmargin}{0pt}
+%\setlength{\textheight}{628pt}
+%\setlength{\headheight}{14pt}
+%\setlength{\textwidth}{456pt}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2.0ex plus0.1ex minus0.1ex}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\topmargin}{-0.5in}
+\setlength{\headheight}{0.2in}
+\setlength{\headsep}{0.2in}
+\setlength{\textheight}{9.in}
+\setlength{\footskip}{0.3in}
+\setlength{\voffset}{0.0in}
 
 % lengths for various boxes
 \newlength{\headerlength}   % length of grayscale box containing title of a chronological list
@@ -33,13 +44,14 @@
 \addtolength{\headerlength}{-2\fboxrule}
 
 \newcommand{\sectionheader}[1]{%
-\colorbox{grey95}{\makebox[\headerlength][l]{\scshape\Large #1\hrulefill}}}
+\colorbox{grey95}{\makebox[\headerlength][l]{\scshape\large #1\hrulefill}}}
 
 \newcommand{\publicationheader}[1]{%
-{\scshape\Large #1}}
+{\scshape\large #1}}
+
 
 \newenvironment{chronlist}{%
-\begin{list}{}{ \setlength{\topsep}{0ex plus0.1ex minus0.3ex}
+\begin{list}{}{ \setlength{\topsep}{-2ex plus0.1ex minus0.3ex}
                 \setlength{\leftmargin}{96pt}
                 \setlength{\labelwidth}{86pt}
                 \setlength{\labelsep}{4pt}
@@ -51,18 +63,30 @@
 {\end{list}\vspace{4.0ex plus 0.5ex minus 0.1ex}}
 
 \newenvironment{genericlist}{%
-\begin{list}{}{ \setlength{\topsep}{0ex plus0.1ex minus0.3ex}
+\begin{list}{}{ \setlength{\topsep}{-2ex plus0.1ex minus0.3ex}
                 \setlength{\leftmargin}{36pt}
                 \setlength{\labelwidth}{0pt}
                 \setlength{\labelsep}{0pt}
                 \setlength{\itemindent}{-24pt}
-                \setlength{\itemsep}{0ex}
+                \setlength{\itemsep}{-1ex}
                 \setlength{\parsep}{1.0ex plus0.1ex minus0.1ex}
                 \setlength{\partopsep}{1.0ex plus0.1ex minus0.1ex}}}
 {\end{list}\vspace{4.0ex plus 0.5ex minus 0.1ex}}
 
 \newenvironment{publist}[1]{%
-\begin{etaremune}}
+\begin{etaremune}[leftmargin=52pt,labelsep=8pt, itemindent=-30pt]}
 {\end{etaremune}}
+
+\newenvironment{awardlist}{%
+\begin{list}{}{ \setlength{\topsep}{-2ex plus0.1ex minus0.3ex}
+                \setlength{\leftmargin}{96pt}
+                \setlength{\labelwidth}{86pt}
+                \setlength{\labelsep}{4pt}
+                \setlength{\parsep}{1.0ex plus0.1ex minus0.1ex}
+                \setlength{\partopsep}{1.0ex plus0.1ex minus0.1ex}
+                \setlength{\itemsep}{-1ex}
+                \renewcommand{\makelabel}[1]{\parbox[t]{86pt}{\itshape
+                ##1}\hfill}}}
+{\end{list}\vspace{4.0ex plus 0.5ex minus 0.1ex}}
 
 \sloppy
